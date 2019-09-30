@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: kraken-dev
+  region: us-east-1
+
+nodeGroups:
+  - name: ng-1
+    instanceType: m5.large # 2 Cores / 8 GiB
+    desiredCapacity: 1
+  - name: ng-2
+    instanceType: m5.xlarge # 4 Cores / 16 GiB
+    desiredCapacity: 1

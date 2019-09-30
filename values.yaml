@@ -1,0 +1,20 @@
+image:
+  repository: docker.io/fluxcd/helm-operator-prerelease
+  tag: helm-v3-71bc9d62
+
+git:
+  ssh:
+    secretName: flux-git-deploy
+  pollInterval: 1m
+
+chartsSyncInterval: 1m
+
+configureRepositories:
+  enable: true
+  repositories:
+    - name: stable
+      url: https://kubernetes-charts.storage.googleapis.com
+
+extraEnvs:
+  - name: HELM_VERSION
+    value: v3
